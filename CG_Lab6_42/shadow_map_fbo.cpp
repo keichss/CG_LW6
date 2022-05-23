@@ -18,13 +18,13 @@ ShadowMapFBO::~ShadowMapFBO()
         glDeleteTextures(1, &m_shadowMap);
     }
 }
-
+//настраиваем нашу текстуру карты теней для работы с теневой выборкой в шейдере вместо обычной выборки
 bool ShadowMapFBO::Init(unsigned int WindowWidth, unsigned int WindowHeight)
 {
-    // Create the FBO
+    // Создаем FBO
     glGenFramebuffers(1, &m_fbo);
 
-    // Create the depth buffer
+    // Создаем буфер глубины
     glGenTextures(1, &m_shadowMap);
     glBindTexture(GL_TEXTURE_2D, m_shadowMap);
     glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT32, WindowWidth, WindowHeight, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
@@ -38,10 +38,10 @@ bool ShadowMapFBO::Init(unsigned int WindowWidth, unsigned int WindowHeight)
     glBindFramebuffer(GL_FRAMEBUFFER, m_fbo);
     glFramebufferTexture2D(GL_DRAW_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D, m_shadowMap, 0);
 
-    // Disable writes to the color buffer
+    // Отключаем запись в буфер цвета
     glDrawBuffer(GL_NONE);
        
-    // Disable reads from the color buffer
+    // Отключаем чтение из буфера цвета
     glReadBuffer(GL_NONE);
 
     GLenum Status = glCheckFramebufferStatus(GL_FRAMEBUFFER);

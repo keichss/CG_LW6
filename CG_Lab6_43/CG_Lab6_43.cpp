@@ -29,7 +29,8 @@ struct CameraDirection
     Vector3f Target;
     Vector3f Up;
 };
-
+//совмещает определенный GL enum, задающий каждую сторону куба, с двумя векторами, 
+//используемыми для задания направления камеры на соответствующую сторону
 CameraDirection gCameraDirections[NUM_OF_LAYERS] =
 {
     { GL_TEXTURE_CUBE_MAP_POSITIVE_X, Vector3f(1.0f, 0.0f, 0.0f),  Vector3f(0.0f, -1.0f, 0.0f) },
@@ -177,7 +178,7 @@ public:
         glutSwapBuffers();
     }
 
-
+    //полный проход теней
     void ShadowMapPass()
     {
         glCullFace(GL_FRONT);
@@ -214,7 +215,7 @@ public:
         }
     }
 
-
+    //полный проход света
     void RenderPass()
     {
         glCullFace(GL_BACK);

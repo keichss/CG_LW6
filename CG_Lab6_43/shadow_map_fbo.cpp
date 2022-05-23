@@ -25,7 +25,7 @@ ShadowMapFBO::~ShadowMapFBO()
         glDeleteTextures(1, &m_depth);
     }	
 }
-
+//инициализируем карту теней
 bool ShadowMapFBO::Init(unsigned int WindowWidth, unsigned int WindowHeight)
 {
     // Create the FBO
@@ -75,7 +75,7 @@ bool ShadowMapFBO::Init(unsigned int WindowWidth, unsigned int WindowHeight)
     return GLCheckError();
 }
 
-
+//устанавливается сторона, на которую произойдет рендер
 void ShadowMapFBO::BindForWriting(GLenum CubeFace)
 {
     glBindFramebuffer(GL_DRAW_FRAMEBUFFER, m_fbo);

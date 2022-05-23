@@ -13,7 +13,7 @@ public:
     bool Init(unsigned int WindowWidth, unsigned int WindowHeight);
 
     void BindForWriting(GLenum CubeFace);
-
+    //BindForWriting() теперь принимает enum для сторон куба
     void BindForReading(GLenum TextureUnit);
     
 private:
