@@ -61,7 +61,7 @@ public:
         m_scale = 0.0f;
         m_pointLight.AmbientIntensity = 0.1f;
         m_pointLight.DiffuseIntensity = 0.9f;
-        m_pointLight.Color = Vector3f(1.0f, 1.0f, 1.0f);
+        m_pointLight.Color = Vector3f(1.0f, 0.0f, 1.0f);
         m_pointLight.Attenuation.Linear = 0.0f;
         m_pointLight.Position = Vector3f(0.0, 5.0, 0.0f);
 

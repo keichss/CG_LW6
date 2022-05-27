@@ -43,7 +43,7 @@ public:
         m_directionalLight.Color = Vector3f(1.0f, 1.0f, 1.0f);
         m_directionalLight.AmbientIntensity = 0.55f;
         m_directionalLight.DiffuseIntensity = 0.9f;
-        m_directionalLight.Direction = Vector3f(1.0f, 0.0, 0.0);
+        m_directionalLight.Direction = Vector3f(10.0f, 0.0f, 10.0f);
 
         m_persProjInfo.FOV = 60.0f;
         m_persProjInfo.Height = WINDOW_HEIGHT;
@@ -178,7 +178,7 @@ private:
 
         m_silhouetteTech.SetWorldMatrix(p.GetWorldTrans());
         m_silhouetteTech.SetWVP(p.GetWVPTrans());
-        m_silhouetteTech.SetLightPos(Vector3f(0.0f, 10.0f, 0.0f));
+        m_silhouetteTech.SetLightPos(Vector3f(-10.0f, 10.0f, -10.0f));
 
         glLineWidth(5.0f);
 
